@@ -1,0 +1,2 @@
+class Marque < ApplicationRecord
+end
