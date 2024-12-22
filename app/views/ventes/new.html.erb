@@ -1,9 +1,15 @@
-<h1>New vente</h1>
+<div class="container mt-3">
+  <div class="row">
+    <h1>New vente</h1>
+    <div class="col-sm-8">
+      <%= render "form", vente: @vente %>
+    </div>
 
-<%= render "form", vente: @vente %>
+    <br>
 
-<br>
+    <div>
+      <%= link_to "Retour", ventes_path%>
+    </div>
 
-<div>
-  <%= link_to "Back to ventes", ventes_path %>
+  </div>  
 </div>
