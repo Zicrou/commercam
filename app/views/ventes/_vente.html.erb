@@ -1,26 +1,29 @@
-<section class="py-3 py-md-5">
-  <div class="container">
-    <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
-      <div>
-        <div id="<%= dom_id vente %>">
-          <p>
-            <strong>Category:</strong>
-            <%= vente.category %>
-          </p>
+<div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end pb-0">
+  <div id="<%= dom_id vente %>">
 
-          <p>
-            <strong>Name:</strong>
-            <%= vente.name %>
-          </p>
+    <p>
+      <strong>Name:</strong>
+      <%= vente.nom %>
+    </p>
 
-          <p>
-            <strong>Price:</strong>
-            <%= vente.price %>
-          </p>
+    <p>
+      <strong>Number:</strong>
+      <%= vente.nombre %>
+    </p>
+    <p>
+      <strong>Prix:</strong>
+      <%= vente.prix %>
+    </p>
 
-        </div>
+    <p>
+      <strong>total:</strong>
+      <%= vente.prix %>
+    </p>
 
-      </div>
-    </div>
+    <p>
+      <%= link_to "Show this vente", vente, class:"btn btn-warning" %>
+    </p>
+<br>
   </div>
-</section>
+
+</div>

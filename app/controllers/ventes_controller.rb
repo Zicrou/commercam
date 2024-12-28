@@ -3,7 +3,7 @@ class VentesController < ApplicationController
 
   # GET /ventes or /ventes.json
   def index
-    @ventes = Vente.order("created_at DESC")
+    @ventes = Vente.all.group_by{|m| m.created_at.beginning_of_month }
   end
 
   # GET /ventes/1 or /ventes/1.json
@@ -22,7 +22,7 @@ class VentesController < ApplicationController
   # POST /ventes or /ventes.json
   def create
     @vente = Vente.new(vente_params)
-
+    
     respond_to do |format|
       if @vente.save
         format.html { redirect_to @vente, notice: "Vente was successfully created." }
@@ -65,6 +65,6 @@ class VentesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vente_params
-      params.require(:vente).permit(:category, :name, :price)
+      params.require(:vente).permit(:nom, :nombre, :prix)
     end
 end

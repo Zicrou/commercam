@@ -25,9 +25,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_21_223258) do
   end
 
   create_table "ventes", force: :cascade do |t|
-    t.string "category"
-    t.string "name"
-    t.integer "price"
+    t.string "nom"
+    t.integer "nombre"
+    t.integer "prix"
+    t.integer "totale"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
