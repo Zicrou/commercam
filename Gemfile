@@ -72,3 +72,5 @@ end
 gem 'pry-rails'
 gem 'pry-byebug'  # For stepping through code, setting breakpoints
 gem 'pry-doc'     # For viewing documentation within Pry
+
+gem "devise", "~> 4.9"

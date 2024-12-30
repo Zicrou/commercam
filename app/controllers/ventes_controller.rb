@@ -1,9 +1,11 @@
 class VentesController < ApplicationController
   before_action :set_vente, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /ventes or /ventes.json
   def index
     @ventes = Vente.all.group_by{|m| m.created_at.beginning_of_month }
+    
   end
 
   # GET /ventes/1 or /ventes/1.json
