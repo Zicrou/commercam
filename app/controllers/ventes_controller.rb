@@ -7,8 +7,10 @@ class VentesController < ApplicationController
     puts current_user.id
     @vents = Vente.where(user_id: current_user.id)
     @ventes = @vents.group_by{|m| m.created_at.beginning_of_month }
+    # Afficher les ventes par semaines
+    @ventes_per_week = @vents.group_by{|m| m.created_at.beginning_of_week }
     @total = @vents.sum(&:prix)
-    #pry.inspect
+    pry.inspect
   end
 
   # GET /ventes/1 or /ventes/1.json
