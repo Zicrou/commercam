@@ -4,8 +4,11 @@ class VentesController < ApplicationController
 
   # GET /ventes or /ventes.json
   def index
-    @ventes = Vente.all.group_by{|m| m.created_at.beginning_of_month }
-    
+    puts current_user.id
+    @vents = Vente.where(user_id: current_user.id)
+    @ventes = @vents.group_by{|m| m.created_at.beginning_of_month }
+    @total = @vents.sum(&:prix)
+    #pry.inspect
   end
 
   # GET /ventes/1 or /ventes/1.json

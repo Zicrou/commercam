@@ -8,7 +8,10 @@
 
       <div id="ventes">
         <% @ventes.each do |month, ventes| %>
-        <h2><%= month.strftime('%B %Y') %></h2><u>Total prix:</u> <strong><%= ventes.sum(&:prix) %> </strong>
+        <h3>Total: <%= @total %>F</h3>
+        <h2><%= month.strftime('%B %Y') %></h2><u>Total prix:</u>
+        <strong><%= ventes.sum(&:prix) %> </strong>
+        <%#= pry.inspect%>
          <h5></h5>
         <% ventes.each do |vente| %>
           <div class="mb-3">
